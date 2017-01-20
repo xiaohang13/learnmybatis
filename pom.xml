@@ -14,7 +14,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mybatis.version>3.2.7</mybatis.version>
+        <mybatis.version>3.4.1</mybatis.version>
         <mysql.version>5.1.29</mysql.version>
     </properties>
 
@@ -38,6 +38,15 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <!--<build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>-->
 
 </project>

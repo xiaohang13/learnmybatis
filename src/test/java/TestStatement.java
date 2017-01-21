@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * Description
@@ -40,6 +41,21 @@ public class TestStatement {
         int delete = sqlSession.delete(statement, 6);
         sqlSession.commit();
         System.out.println(delete);
+    }
+
+    @Test
+    public void testUpdate() {
+        String statement = "com.nfmedia.mybatis.entries.UserMapper.updateUser";
+        int update = sqlSession.update(statement, new User(8, "randy", 18, "上海虹桥"));
+        sqlSession.commit();
+        System.out.println(update);
+    }
+
+    @Test
+    public void testGetAll() {
+        String statement = "com.nfmedia.mybatis.entries.UserMapper.getUserList";
+        List<User> userList = sqlSession.selectList(statement);
+        System.out.println(userList);
     }
 
     @After

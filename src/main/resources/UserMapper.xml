@@ -13,6 +13,17 @@
     </insert>
 
     <delete id="deleteUser" parameterType="int">
-        DELETE FROM my_user WHERE id = #{id}
+        DELETE FROM my_user
+        WHERE id = #{id}
     </delete>
+
+    <update id="updateUser" parameterType="user">
+        UPDATE my_user
+        SET name = #{name}, age = #{age}, address = #{address}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getUserList" resultType="user">
+        SELECT * FROM my_user
+    </select>
 </mapper>

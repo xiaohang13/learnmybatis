@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nfmedia.mybatis.entries.UserMapper">
+    <select id="getUser" parameterType="Integer" resultType="user">
+        SELECT *
+        FROM my_user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="addUser" parameterType="user">
+        INSERT INTO my_user (name, age, address) VALUES (#{name}, #{age}, #{address})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM my_user
+        WHERE id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="user">
+        UPDATE my_user
+        SET name = #{name}, age = #{age}, address = #{address}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getUserList" resultType="user">
+        SELECT * FROM my_user
+    </select>
+</mapper>
